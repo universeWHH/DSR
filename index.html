@@ -2,31 +2,43 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Festival Greeting Generator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🎉 Festival Greeting App</title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="icons/icon-192.png" type="image/png" />
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>Festival Greeting Card</h1>
-      <button id="darkModeToggle" title="Toggle Dark Mode">🌙</button>
+  <div class="app-wrapper">
+    <header class="app-header">
+      <h1>✨ Festival Greeting Generator</h1>
+      <button id="darkToggle" title="Toggle Dark Mode">🌙</button>
     </header>
 
-    <form id="nameForm">
-      <input type="text" id="nameInput" placeholder="Enter your name..." required />
-      <button type="submit">Generate Greeting</button>
-    </form>
+    <section class="form-section">
+      <input type="text" id="nameInput" placeholder="Enter your name..." />
+      <input type="text" id="messageInput" placeholder="Enter your message..." />
+      <input type="file" id="imageUpload" accept="image/*" />
+      <button id="generateBtn">Generate Greeting</button>
+    </section>
 
-    <div class="greeting-card" id="greetingCard">
-      <img src="https://media.giphy.com/media/xT0GqFh7hf1YiEZg5q/giphy.gif" alt="Festival Background" />
-      <h2 id="greetingText">Happy Festival!</h2>
-    </div>
+    <section class="card-preview" id="cardPreview">
+      <div class="card-container">
+        <img id="cardBg" src="https://media.giphy.com/media/xT0GqFh7hf1YiEZg5q/giphy.gif" alt="Festival" />
+        <div class="overlay">
+          <h2 id="cardMessage">Happy Festival!</h2>
+          <p id="cardName">From, Your Name</p>
+        </div>
+      </div>
+    </section>
 
-    <div class="ad-banner" id="adBanner">
-      <!-- Placeholder for AdMob-style banner -->
-      <p>🔸 Your Ad Could Be Here (AdMob Placeholder) 🔸</p>
-    </div>
+    <section class="actions">
+      <button id="copyBtn">📋 Copy Greeting</button>
+    </section>
+
+    <footer class="ad-banner">
+      🔸 This space is reserved for your Ad (AdMob Placeholder) 🔸
+    </footer>
   </div>
 
   <script src="script.js"></script>
