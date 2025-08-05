@@ -3,41 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>🎉 Festival Greeting App</title>
+  <title>AdMob Simulation App</title>
   <link rel="stylesheet" href="styles.css" />
-  <link rel="manifest" href="manifest.json" />
-  <link rel="icon" href="icons/icon-192.png" type="image/png" />
 </head>
 <body>
-  <div class="app-wrapper">
+  <div class="container">
     <header class="app-header">
-      <h1>✨ Festival Greeting Generator</h1>
-      <button id="darkToggle" title="Toggle Dark Mode">🌙</button>
+      <h1>📢 AdMob Display Simulator</h1>
+      <button id="toggleTheme" title="Toggle Dark Mode">🌙</button>
     </header>
 
-    <section class="form-section">
-      <input type="text" id="nameInput" placeholder="Enter your name..." />
-      <input type="text" id="messageInput" placeholder="Enter your message..." />
-      <input type="file" id="imageUpload" accept="image/*" />
-      <button id="generateBtn">Generate Greeting</button>
-    </section>
+    <main>
+      <section class="content">
+        <h2>Welcome to the App!</h2>
+        <p>This section can contain your app's content.</p>
+      </section>
 
-    <section class="card-preview" id="cardPreview">
-      <div class="card-container">
-        <img id="cardBg" src="https://media.giphy.com/media/xT0GqFh7hf1YiEZg5q/giphy.gif" alt="Festival" />
-        <div class="overlay">
-          <h2 id="cardMessage">Happy Festival!</h2>
-          <p id="cardName">From, Your Name</p>
+      <!-- Simulated AdMob Banner -->
+      <section class="ad-banner">
+        <div class="ad animated-ad">
+          <p>🅰️ Simulated AdMob Banner Ad</p>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
-    <section class="actions">
-      <button id="copyBtn">📋 Copy Greeting</button>
-    </section>
-
-    <footer class="ad-banner">
-      🔸 This space is reserved for your Ad (AdMob Placeholder) 🔸
+    <footer>
+      <p>&copy; 2025 Your App - AdMob Simulation</p>
     </footer>
   </div>
 
