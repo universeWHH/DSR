@@ -3,32 +3,43 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>AdMob Simulation App</title>
+  <title>AdMob Ad ID Simulator</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <div class="container">
     <header class="app-header">
-      <h1>📢 AdMob Display Simulator</h1>
+      <h1>📢 AdMob Ad Simulator</h1>
       <button id="toggleTheme" title="Toggle Dark Mode">🌙</button>
     </header>
 
     <main>
+      <section class="form-section">
+        <label for="adUnitInput">Paste your AdMob Banner Ad Unit ID:</label>
+        <input
+          type="text"
+          id="adUnitInput"
+          placeholder="ca-app-pub-XXXXXXXXXXXXXXXX/NNNNNNNNNN"
+        />
+        <button id="saveAdUnitBtn">Save Ad ID</button>
+      </section>
+
       <section class="content">
-        <h2>Welcome to the App!</h2>
-        <p>This section can contain your app's content.</p>
+        <h2>Welcome!</h2>
+        <p>This app simulates AdMob banner ads using your pasted Ad Unit ID. (Browser-only preview)</p>
       </section>
 
       <!-- Simulated AdMob Banner -->
       <section class="ad-banner">
-        <div class="ad animated-ad">
-          <p>ca-app-pub-1055860889967946/3916353881</p>
+        <div class="ad" id="adPlaceholder">
+          🅰️ Simulated AdMob Banner<br/>
+          <span id="adUnitDisplay">(Ad Unit ID: not set)</span>
         </div>
       </section>
     </main>
 
     <footer>
-      <p>ca-app-pub-1055860889967946/3916353881</p>
+      <p>&copy; 2025 Your App • Simulated Ads Only</p>
     </footer>
   </div>
 
