@@ -3,22 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>To-Do List App</title>
+  <title>Festival Greeting Generator</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <div class="container">
     <header>
-      <h1>To-Do List</h1>
+      <h1>Festival Greeting Card</h1>
       <button id="darkModeToggle" title="Toggle Dark Mode">🌙</button>
     </header>
-    
-    <form id="taskForm">
-      <input type="text" id="taskInput" placeholder="Enter a new task..." required />
-      <button type="submit">Add Task</button>
+
+    <form id="nameForm">
+      <input type="text" id="nameInput" placeholder="Enter your name..." required />
+      <button type="submit">Generate Greeting</button>
     </form>
 
-    <ul id="taskList"></ul>
+    <div class="greeting-card" id="greetingCard">
+      <img src="https://media.giphy.com/media/xT0GqFh7hf1YiEZg5q/giphy.gif" alt="Festival Background" />
+      <h2 id="greetingText">Happy Festival!</h2>
+    </div>
+
+    <div class="ad-banner" id="adBanner">
+      <!-- Placeholder for AdMob-style banner -->
+      <p>🔸 Your Ad Could Be Here (AdMob Placeholder) 🔸</p>
+    </div>
   </div>
 
   <script src="script.js"></script>
