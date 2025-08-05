@@ -1,7 +1,0 @@
-{
-  "name": "Festival Greeting App",
-  "short_name": "Greetings",
-  "start_url": "index.html",
-  "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#ff5722",
