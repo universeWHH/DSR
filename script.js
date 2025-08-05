@@ -7,7 +7,7 @@ const toggleThemeBtn = document.getElementById('toggleTheme');
 saveAdUnitBtn.addEventListener('click', () => {
   const adID = adUnitInput.value.trim();
   if (adID === '') {
-    alert('Please enter a valid AdMob Ad Unit ID.');
+    alert('ca-app-pub-1055860889967946/3916353881');
     return;
   }
   localStorage.setItem('adUnitID', adID);
