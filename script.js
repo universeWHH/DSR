@@ -1,41 +1,55 @@
-// DOM elements
-const nameForm = document.getElementById('nameForm');
 const nameInput = document.getElementById('nameInput');
-const greetingText = document.getElementById('greetingText');
-const darkModeToggle = document.getElementById('darkModeToggle');
+const messageInput = document.getElementById('messageInput');
+const imageUpload = document.getElementById('imageUpload');
+const generateBtn = document.getElementById('generateBtn');
+const cardMessage = document.getElementById('cardMessage');
+const cardName = document.getElementById('cardName');
+const cardBg = document.getElementById('cardBg');
+const darkToggle = document.getElementById('darkToggle');
+const copyBtn = document.getElementById('copyBtn');
 
-// Load name from localStorage if available
+// Load stored preferences
 window.addEventListener('DOMContentLoaded', () => {
-  const savedName = localStorage.getItem('username');
-  if (savedName) {
-    nameInput.value = savedName;
-    updateGreeting(savedName);
-  }
-
-  // Apply dark mode setting
   if (localStorage.getItem('darkMode') === 'true') {
     document.body.classList.add('dark');
   }
+
+  // Register Service Worker
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js');
+  }
 });
 
-// Handle form submission
-nameForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const name = nameInput.value.trim();
-  if (name === '') return;
-
-  localStorage.setItem('username', name);
-  updateGreeting(name);
+// Generate Greeting
+generateBtn.addEventListener('click', () => {
+  const name = nameInput.value.trim() || 'Your Name';
+  const message = messageInput.value.trim() || 'Happy Festival!';
+  cardMessage.textContent = message;
+  cardName.textContent = `From, ${name}`;
 });
 
-// Update greeting text
-function updateGreeting(name) {
-  greetingText.textContent = `Happy Festival, ${name}! 🎉`;
-}
+// Upload Background
+imageUpload.addEventListener('change', (e) => {
+  const file = e.target.files[0];
+  if (file && file.type.startsWith('image/')) {
+    const reader = new FileReader();
+    reader.onload = function(evt) {
+      cardBg.src = evt.target.result;
+    };
+    reader.readAsDataURL(file);
+  }
+});
 
-// Toggle dark mode
-darkModeToggle.addEventListener('click', () => {
+// Copy Greeting Text
+copyBtn.addEventListener('click', () => {
+  const text = `${cardMessage.textContent} - ${cardName.textContent}`;
+  navigator.clipboard.writeText(text)
+    .then(() => alert('Greeting copied! 🎉'))
+    .catch(() => alert('Failed to copy.'));
+});
+
+// Toggle Dark Mode
+darkToggle.addEventListener('click', () => {
   document.body.classList.toggle('dark');
-  const isDark = document.body.classList.contains('dark');
-  localStorage.setItem('darkMode', isDark);
-});renderTasks();
+  localStorage.setItem('darkMode', document.body.classList.contains('dark'));
+});
